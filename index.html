@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site para projeto mvp do curso de pós graduação em engenharia de software da puc rio">
+    <meta name="keywords" content="programacao,html,css,javascript,projeto">
+    <meta name="author" content="Camila Caldas">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>SuperTx - Projeto MVP Eng Software</title>
+</head>
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h1>SuperTx</h1>
+        </div>
+        <div class="banner">
+            <img src="img/taxi.jpg" alt="imagem do taxi na estrada" width="1000" height="300" fit="crop" >
+        </div>
+    </header>
+
+    <div class="topnav">
+        <div class="nav-item" data-section="Corridas" onclick="showSection('Corridas')">Corridas</div>
+        <div class="nav-item" data-section="Clientes" onclick="showSection('Clientes')">Clientes</div>
+        <div class="nav-item" data-section="Gestao" onclick="showSection('Gestao')">Gestão</div>
+    </div>
+
+    <!-- Seção para adicionar uma nova corrida e visualizar novas corridas -->
+    <section class="Corridas">
+        <form>
+            <br>
+            <label for="cpfClienteCorrida">Cpf do cliente:</label>
+            <input type="text" id="cpfClienteCorrida" placeholder="Adicionar cpf cliente:" required><br><br>
+            <label for="origemCorrida">Origem da corrida:</label>
+                <select required name="tiposDeCorrida">
+                    <option selected disabled value="">selecione a origem da corrida</option>
+                    <option value="aplicativo">aplicativo</option>
+                    <option value="rua">rua</option>
+                    <option value="cliente">cliente</option>
+                </select><br><br>
+            <label for="valorCorrida">Valor da corrida:</label>
+            <input type="text" id="valorCorrida" placeholder="Adicionar valor da corrida:" required><br><br>
+            <input type="submit" value="Adicionar corrida" class="addBtn">
+        </form>
+
+        <table id="tabelaCorridas">
+            <br><br>
+            <tr>
+                <th>Nº corrida</th>
+                <th>Nome do cliente</th>
+                <th>Origem da corrida</th>
+                <th>Valor da corrida</th>
+                <th>Hora da corrida</th>
+            </tr>
+        </table>
+    </section>
+    
+    <section class="Clientes" style="display:none;">
+        <form>
+            <br>
+            <label for="cpfCliente">Cpf do cliente:</label>
+            <input type="text" id="cpfCliente" placeholder="Adicionar cpf cliente:" required><br><br>
+            <label for="nomeCliente">Nome do cliente:</label>
+            <input type="text" id="nomeCliente" placeholder="Adicionar nome do cliente:" required><br><br>
+            <label for="telefoneCliente">Telefone do cliente:</label>
+            <input type="text" id="telefoneCliente" placeholder="Adicionar o telefone do cliente:" required><br><br>
+            <input type="submit" value="Adicionar cliente" class="addBtn">
+        </form>
+
+        <table id="tabelaClientes">
+            <br><br>
+            <tr>
+                <th>Cpf do cliente</th>
+                <th>Nome do cliente</th>
+                <th>Telefone</th>
+                <th>Data do cadastro</th>
+            </tr>
+        </table>
+    </section>
+
+    <section class="Gestao" style="display:none;">
+        <br>
+        <ul type="disc" class="list">
+            <li>Top 5 clientes mais rentáveis (Em contrução)</li>
+            <li>Distribuição das corridas por origem (Em construção)</li>
+            <li>Faturamento por mês (Em construção)</li>
+        </ul>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>
